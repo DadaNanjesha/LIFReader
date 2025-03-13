@@ -4,7 +4,7 @@
         "output_graph": "output/graph.png"
     },
     "graph_settings": {
-        "node_size": 500,
+        "node_size": 1500,
         "node_color": "lightblue",
         "with_labels": true,
         "edge_color": "gray",
@@ -16,5 +16,11 @@
     "logging": {
         "log_level": "INFO",
         "log_file": "logs/lif_reader.log"
+    },
+    "command_line_args": {
+        "lif": true,
+        "visualize": true,
+        "vda5050": false,
+        "vda5050_server": "ws://localhost:8080"
     }
 }

@@ -5,7 +5,6 @@ logger = logging.getLogger(__name__)
 
 
 class ConfigLoader:
-
     def __init__(self, config_path="config.json"):
         self.config_path = config_path
         self.config = self._load_config()
@@ -49,4 +48,12 @@ class ConfigLoader:
             return self.config["logging"][key]
         except KeyError:
             logger.warning(f"Logging setting not found for key: {key}")
+            return None
+
+    def get_command_line_arg(self, key):
+        """Gets a command line argument from the configuration."""
+        try:
+            return self.config["command_line_args"][key]
+        except KeyError:
+            logger.warning(f"Command line argument not found for key: {key}")
             return None
