@@ -1,47 +1,44 @@
-import matplotlib.pyplot as plt
 import networkx as nx
+import matplotlib.pyplot as plt
+
 
 class GraphRenderer:
-    def __init__(self, graph):
+
+    def __init__(self, lif_graph):
+        self.lif_graph = lif_graph
+
+    def visualize_graph(self):
         """
-        Initialize the GraphRenderer with a graph.
+        Visualizes the LIF graph using matplotlib.
         """
-        self.graph = graph
+        for layout_id, graph in self.lif_graph.layouts.items():
+            plt.figure(figsize=(12, 8))
 
-    def render(self, node_size: int = 500, node_color: str = "lightblue", with_labels: bool = True):
-        """
-        Render the graph with different colors for nodes and stations.
-        """
-        # Get node positions
-        pos = nx.get_node_attributes(self.graph, "pos")
+            # Create a dictionary of node positions
+            pos = {}
+            for node_id, node_data in graph.nodes(data=True):
+                pos[node_id] = (
+                    node_data["nodePosition"]["x"],
+                    node_data["nodePosition"]["y"],
+                )
 
-        # Define color map for node types
-        color_map = {
-            "default": "blue",  # Default color for nodes
-            "parking": "red",      # Color for parking nodes
-            "drop": "yellow",           # Color for drop nodes
-            "station": "orange"      # Color for station nodes
-        }
+            # Draw nodes
+            nx.draw_networkx_nodes(graph, pos, node_color="skyblue", node_size=1500)
 
-        # Assign colors to nodes based on their type
-        node_colors = []
-        for node in self.graph.nodes:
-            node_type = self.graph.nodes[node].get("node_type", "default")  # Get node type, default to "default"
-            node_colors.append(color_map.get(node_type, "lightblue"))  # Use color_map or default to lightblue
+            # Draw edges explicitly with customization
+            # can add connectionstyle="arc3,rad=0.2",
+            nx.draw_networkx_edges(
+                graph,
+                pos,
+                edge_color="black",
+                width=1,
+                alpha=0.7,
+                style="solid",
+            )
 
-        # Draw the graph
-        nx.draw(
-            self.graph,
-            pos,
-            with_labels=with_labels,
-            node_size=node_size,
-            node_color=node_colors,
-            font_size=8,
-            font_color="black",
-            font_weight="bold",
-            edge_color="gray"
-        )
+            # Draw node labels
+            nx.draw_networkx_labels(graph, pos, font_size=10, font_weight="bold")
 
-        # Show the graph
-        plt.title("LIF Graph Visualization")
-        plt.show()
+            plt.title(f"LIF Graph - Layout ID: {layout_id}")
+            plt.axis("off")  # Turn off axis labels and ticks
+            plt.show()

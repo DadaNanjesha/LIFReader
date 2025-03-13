@@ -1,12 +1,17 @@
 {
     "file_paths": {
-        "lif_file": "files/example2.json", 
+        "lif_file": "files/example2.json",
         "output_graph": "output/graph.png"
     },
     "graph_settings": {
         "node_size": 100,
         "node_color": "lightblue",
-        "with_labels": true
+        "with_labels": true,
+        "edge_color": "gray",
+        "edge_width": 1.0,
+        "edge_alpha": 0.7,
+        "edge_style": "solid",
+        "edge_connectionstyle": "-"
     },
     "logging": {
         "log_level": "INFO",

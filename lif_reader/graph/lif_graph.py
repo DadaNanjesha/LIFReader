@@ -1,55 +1,97 @@
 import networkx as nx
+import logging
+from typing import Dict, List
+from lif_reader.models.node import Node
+from lif_reader.models.edge import Edge
+from lif_reader.models.station import Station
+
+logger = logging.getLogger(__name__)
 
 class LIFGraph:
     def __init__(self):
-        self.graph = nx.Graph()
+        self.graph = nx.DiGraph()
+        self.layouts: Dict[str, nx.DiGraph] = {}
+        self.stations: Dict[str, Station] = {}
 
-    def add_node(self, node):
-        """
-        Add a node to the graph with all its properties.
-        """
-        self.graph.add_node(
-            node.node_id,
-            pos=(node.node_position["x"], node.node_position["y"]), 
-            node_id=node.node_id, 
-            node_name=node.node_name,  
-            node_description=node.node_description,  
-            map_id=node.map_id,
-            node_type=node.node_type,  # Node type (e.g., "parking", "drop", "station")
-            vehicle_type_node_properties=node.vehicle_type_node_properties, 
-            actions=node.actions  # List of actions
-        )
+    def clear(self):
+        """Clears the graph data, removing all nodes, edges, and layouts."""
+        self.graph.clear()
+        self.layouts.clear()
+        self.stations.clear()
+        logger.info("LIFGraph cleared.")
 
-    def add_edge(self, edge):
-        """
-        Add an edge to the graph with all its properties.
-        """
-        self.graph.add_edge(
-            edge.start_node_id,
-            edge.end_node_id,
-            edge_id=edge.edge_id, 
-            edge_name=edge.edge_name,  
-            edge_description=edge.edge_description,
-            vehicle_type_edge_properties=edge.vehicle_type_edge_properties  
-        )
+    def add_layout(self, layout_id: str):
+        """Adds a new layout (subgraph) to the LIFGraph."""
+        self.layouts[layout_id] = nx.DiGraph()
+        logger.info(f"Layout '{layout_id}' added.")
 
-    def add_station(self, station):
-        """
-        Add a station to the graph with all its properties.
-        """
-        for node_id in station.interaction_node_ids:
-            if node_id in self.graph:
-                self.graph.nodes[node_id].update({
-                    "station_id": station.station_id,  
-                    "station_name": station.station_name,  
-                    "station_description": station.station_description,  
-                    "station_height": station.station_height,  
-                    "station_position": station.station_position,  
-                    "station_type": station.station_type
-                })
+    def add_node(self, node: Node, layout_id: str):
+        """Adds a node to the specified layout."""
+        try:
+            self.layouts[layout_id].add_node(node.nodeId, **node.model_dump())
+            logger.debug(f"Node '{node.nodeId}' added to layout '{layout_id}'.")
+        except Exception as e:
+            logger.error(
+                f"Error adding node '{node.nodeId}' to layout '{layout_id}': {e}"
+            )
 
-    def get_graph(self):
-        """
-        Return the constructed graph with all properties.
-        """
-        return self.graph
+    def add_edge(self, edge: Edge, layout_id: str):
+        """Adds an edge to the specified layout."""
+        try:
+            self.layouts[layout_id].add_edge(
+                edge.startNodeId, edge.endNodeId, **edge.model_dump()
+            )
+            logger.debug(f"Edge '{edge.edgeId}' added to layout '{layout_id}'.")
+        except Exception as e:
+            logger.error(
+                f"Error adding edge '{edge.edgeId}' to layout '{layout_id}': {e}"
+            )
+
+    def add_station(self, station: Station):
+        """Adds a station to the LIFGraph."""
+        self.stations[station.stationId] = station
+        logger.debug(f"Station '{station.stationId}' added.")
+
+    def get_shortest_path(
+        self, start_node: str, end_node: str, layout_id: str
+    ) -> List[str]:
+        """Calculates the shortest path between two nodes in a layout."""
+        try:
+            path = nx.shortest_path(self.layouts[layout_id], start_node, end_node)
+            logger.debug(
+                f"Shortest path from '{start_node}' to '{end_node}' in layout '{layout_id}': {path}"
+            )
+            return path
+        except nx.NetworkXNoPath:
+            logger.warning(
+                f"No path found from '{start_node}' to '{end_node}' in layout '{layout_id}'."
+            )
+            return []  # Or raise an exception if appropriate
+        except Exception as e:
+            logger.error(
+                f"Error calculating shortest path from '{start_node}' to '{end_node}' in layout '{layout_id}': {e}"
+            )
+            return []
+
+    def get_all_paths(
+        self, start_node: str, end_node: str, layout_id: str
+    ) -> List[List[str]]:
+        """Finds all simple paths between two nodes in a layout."""
+        try:
+            paths = list(
+                nx.all_simple_paths(self.layouts[layout_id], start_node, end_node)
+            )
+            logger.debug(
+                f"All paths from '{start_node}' to '{end_node}' in layout '{layout_id}': {paths}"
+            )
+            return paths
+        except nx.NetworkXNoPath:
+            logger.warning(
+                f"No paths found from '{start_node}' to '{end_node}' in layout '{layout_id}'."
+            )
+            return []
+        except Exception as e:
+            logger.error(
+                f"Error calculating all paths from '{start_node}' to '{end_node}' in layout '{layout_id}': {e}"
+            )
+            return []

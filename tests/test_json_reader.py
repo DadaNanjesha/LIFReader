@@ -1,6 +1,6 @@
 import pytest
 import json
-from lif_reader.json_reader import JSONReader
+from lif_reader.lif_reader import LIFReader
 from lif_reader.utils.exceptions import InvalidLIFFileError
 
 def test_read_valid_json(tmp_path):
@@ -19,7 +19,7 @@ def test_read_valid_json(tmp_path):
         json.dump(json_data, f)
 
     # Test reading the file
-    reader = JSONReader(file_path)
+    reader = LIFReader(file_path)
     data = reader.read()
     assert data == json_data
 
@@ -30,12 +30,12 @@ def test_read_invalid_json(tmp_path):
         f.write("invalid json")
 
     # Test reading the file
-    reader = JSONReader(file_path)
+    reader = LIFReader(file_path)
     with pytest.raises(InvalidLIFFileError):
         reader.read()
 
 def test_read_missing_file():
     # Test reading a non-existent file
-    reader = JSONReader("nonexistent.lif")
+    reader = LIFReader("nonexistent.lif")
     with pytest.raises(FileNotFoundError):
         reader.read()

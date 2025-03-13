@@ -1,28 +1,52 @@
 import json
-from pathlib import Path
-from typing import Dict, Any
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 class ConfigLoader:
-    def __init__(self, config_file: str = "config.json"):
-        self.config_file = Path(config_file)
+
+    def __init__(self, config_path="config.json"):
+        self.config_path = config_path
         self.config = self._load_config()
 
-    def _load_config(self) -> Dict[str, Any]:
-        """Load the configuration from the JSON file."""
-        if not self.config_file.exists():
-            raise FileNotFoundError(f"Configuration file not found: {self.config_file}")
+    def _load_config(self):
+        """Loads the configuration from the config.json file."""
+        try:
+            with open(self.config_path, "r") as f:
+                config = json.load(f)
+            logger.info(f"Configuration loaded from {self.config_path}")
+            return config
+        except FileNotFoundError:
+            logger.error(f"Configuration file not found at {self.config_path}")
+            raise
+        except json.JSONDecodeError:
+            logger.error(f"Error decoding JSON from {self.config_path}")
+            raise
+        except Exception as e:
+            logger.error(f"Error loading configuration: {e}")
+            raise
 
-        with open(self.config_file, "r") as f:
-            return json.load(f)
+    def get_file_path(self, key):
+        """Gets a file path from the configuration."""
+        try:
+            return self.config["file_paths"][key]
+        except KeyError:
+            logger.warning(f"File path not found for key: {key}")
+            return None
 
-    def get_file_path(self, key: str) -> str:
-        """Get a file path from the configuration."""
-        return self.config["file_paths"].get(key)
+    def get_graph_setting(self, key):
+        """Gets a graph setting from the configuration."""
+        try:
+            return self.config["graph_settings"][key]
+        except KeyError:
+            logger.warning(f"Graph setting not found for key: {key}")
+            return None
 
-    def get_graph_setting(self, key: str) -> Any:
-        """Get a graph setting from the configuration."""
-        return self.config["graph_settings"].get(key)
-
-    def get_logging_setting(self, key: str) -> Any:
-        """Get a logging setting from the configuration."""
-        return self.config["logging"].get(key)
+    def get_logging_setting(self, key):
+        """Gets a logging setting from the configuration."""
+        try:
+            return self.config["logging"][key]
+        except KeyError:
+            logger.warning(f"Logging setting not found for key: {key}")
+            return None

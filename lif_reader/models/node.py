@@ -1,13 +1,13 @@
-from dataclasses import dataclass
-from typing import Dict, List
+from typing import Dict, List, Optional
+from pydantic import BaseModel
 
-@dataclass
-class Node:
-    node_id: str
-    node_name: str
-    node_description: str
-    map_id: str
-    node_position: Dict[str, float]  # {"x": float, "y": float}
-    vehicle_type_node_properties: List[Dict]  # List of vehicle-specific properties
-    actions: List[Dict]
-    node_type: str # property: "parking", "drop", or "station"
+from .vehicle_properties import VehicleTypeNodeProperty
+
+
+class Node(BaseModel):
+    nodeId: str
+    nodeName: Optional[str] = None
+    nodeDescription: Optional[str] = None
+    mapId: Optional[str] = None
+    nodePosition: Optional[Dict[str, float]] = None  # {"x": number, "y": number}
+    vehicleTypeNodeProperties: Optional[List[VehicleTypeNodeProperty]] = None

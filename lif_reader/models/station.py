@@ -1,12 +1,11 @@
-from dataclasses import dataclass
-from typing import List, Dict
+from typing import List, Dict, Optional
+from pydantic import BaseModel
 
-@dataclass
-class Station:
-    station_id: str
-    station_name: str
-    interaction_node_ids: List[str]
-    station_description: str
-    station_height: float
-    station_position: Dict[str, float]  # {"x": float, "y": float, "theta": float}
-    station_type: str = "default"  # property: "parking", "drop", or "station"
+
+class Station(BaseModel):
+    stationId: str
+    interactionNodeIds: List[str]
+    stationName: Optional[str] = None
+    stationDescription: Optional[str] = None
+    stationHeight: Optional[float] = None
+    stationPosition: Optional[Dict[str, float]] = None

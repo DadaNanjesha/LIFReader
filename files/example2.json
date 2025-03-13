@@ -343,7 +343,7 @@
                 {
                     "edgeId": "354345_359125",
                     "edgeName": "354345_359125",
-                    "startNodeId": "354345",
+                    "startNodeId": "351880",
                     "endNodeId": "359125",
                     "edgeDescription": "",
                     "vehicleTypeEdgeProperties": [ ]
