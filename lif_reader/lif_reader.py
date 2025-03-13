@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 
 class LIFReader:
 
-    def __init__(self):
-        self.lif_graph = LIFGraph()  # Pass LIFGraph as parameter during initialization
+    def __init__(self, lif_graph):
+        self.lif_graph = lif_graph
 
     def parse_lif_file(self, file_path: str):
         with open(file_path, "r") as file:
