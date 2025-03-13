@@ -1,0 +1,15 @@
+{
+    "file_paths": {
+        "lif_file": "files/example2.json", 
+        "output_graph": "output/graph.png"
+    },
+    "graph_settings": {
+        "node_size": 100,
+        "node_color": "lightblue",
+        "with_labels": true
+    },
+    "logging": {
+        "log_level": "INFO",
+        "log_file": "logs/lif_reader.log"
+    }
+}
