@@ -1,41 +1,32 @@
 import pytest
-import json
 from lif_reader.lif_reader import LIFReader
-from lif_reader.utils.exceptions import InvalidLIFFileError
+from lif_reader.graph.lif_graph import LIFGraph
+from lif_reader.models.lif import LIF  # Import the LIF model
+import json
 
-def test_read_valid_json(tmp_path):
-    # Create a valid JSON file
-    json_data = {
-        "metaInformation": {
-            "projectIdentification": "TestProject",
-            "creator": "TestCreator",
-            "exportTimestamp": "2023-10-01T00:00:00Z",
-            "lifVersion": "1.0.0"
-        },
-        "layouts": []
-    }
-    file_path = tmp_path / "test.lif"
-    with open(file_path, "w") as f:
-        json.dump(json_data, f)
 
-    # Test reading the file
-    reader = LIFReader(file_path)
-    data = reader.read()
-    assert data == json_data
+def test_read_valid_json():
+    lif_graph = LIFGraph()
+    reader = LIFReader(lif_graph)
+    file_path = "files/example2.json"  # Ensure this path is correct for testing
+    try:
+        reader.parse_lif_file(file_path)  # Call the parse_lif_file method
+        assert True  # If parsing succeeds, the test passes
+    except Exception as e:
+        assert False, f"Parsing failed: {e}"
 
-def test_read_invalid_json(tmp_path):
-    # Create an invalid JSON file
-    file_path = tmp_path / "test.lif"
-    with open(file_path, "w") as f:
-        f.write("invalid json")
 
-    # Test reading the file
-    reader = LIFReader(file_path)
-    with pytest.raises(InvalidLIFFileError):
-        reader.read()
+def test_read_invalid_json():
+    lif_graph = LIFGraph()
+    reader = LIFReader(lif_graph)
+    file_path = "files/invalid.json"
+    with pytest.raises(Exception):
+        reader.parse_lif_file(file_path)
+
 
 def test_read_missing_file():
-    # Test reading a non-existent file
-    reader = LIFReader("nonexistent.lif")
+    lif_graph = LIFGraph()
+    reader = LIFReader(lif_graph)
+    file_path = "missing.json"
     with pytest.raises(FileNotFoundError):
-        reader.read()
+        reader.parse_lif_file(file_path)

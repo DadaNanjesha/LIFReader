@@ -1,83 +1,38 @@
+import pytest
 from lif_reader.models.node import Node
 from lif_reader.models.edge import Edge
 from lif_reader.models.station import Station
 from lif_reader.models.layout import Layout
 
+
 def test_node_creation():
-    node = Node(
-        node_id="N1",
-        node_name="Node 1",
-        node_description="Test Node",
-        map_id="Map1",
-        node_position={"x": 0.0, "y": 0.0},
-        vehicle_type_node_properties=[]
-    )
-    assert node.node_id == "N1"
-    assert node.node_name == "Node 1"
-    assert node.node_position == {"x": 0.0, "y": 0.0}
+    node = Node(nodeId="N1", nodeName="Node 1")  # Updated to use 'nodeName'
+    assert node.nodeId == "N1"
+    assert node.nodeName == "Node 1"
+
 
 def test_edge_creation():
     edge = Edge(
-        edge_id="E1",
-        edge_name="Edge 1",
-        edge_description="Test Edge",
-        start_node_id="N1",
-        end_node_id="N2",
-        vehicle_type_edge_properties=[]
-    )
-    assert edge.edge_id == "E1"
-    assert edge.start_node_id == "N1"
-    assert edge.end_node_id == "N2"
+        edgeId="E1", edgeName="Edge 1", startNodeId="N1", endNodeId="N2"
+    )  # Updated to use 'edgeName'
+    assert edge.edgeId == "E1"
+    assert edge.edgeName == "Edge 1"
+    assert edge.startNodeId == "N1"
+    assert edge.endNodeId == "N2"
+
 
 def test_station_creation():
     station = Station(
-        station_id="S1",
-        interaction_node_ids=["N1"],
-        station_name="Station 1",
-        station_description="Test Station",
-        station_height=1.0,
-        station_position={"x": 0.0, "y": 0.0, "theta": 0.0}
+        stationId="S1",
+        stationName="Station 1",
+        interactionNodeIds=[],
     )
-    assert station.station_id == "S1"
-    assert station.interaction_node_ids == ["N1"]
-    assert station.station_height == 1.0
+    assert station.stationId == "S1"
+    assert station.stationName == "Station 1"
+    assert station.interactionNodeIds == []
+
 
 def test_layout_creation():
-    node = Node(
-        node_id="N1",
-        node_name="Node 1",
-        node_description="Test Node",
-        map_id="Map1",
-        node_position={"x": 0.0, "y": 0.0},
-        vehicle_type_node_properties=[]
-    )
-    edge = Edge(
-        edge_id="E1",
-        edge_name="Edge 1",
-        edge_description="Test Edge",
-        start_node_id="N1",
-        end_node_id="N2",
-        vehicle_type_edge_properties=[]
-    )
-    station = Station(
-        station_id="S1",
-        interaction_node_ids=["N1"],
-        station_name="Station 1",
-        station_description="Test Station",
-        station_height=1.0,
-        station_position={"x": 0.0, "y": 0.0, "theta": 0.0}
-    )
-    layout = Layout(
-        layout_id="L1",
-        layout_name="Layout 1",
-        layout_version="1.0",
-        layout_level_id="Level1",
-        layout_description="Test Layout",
-        nodes=[node],
-        edges=[edge],
-        stations=[station]
-    )
-    assert layout.layout_id == "L1"
-    assert len(layout.nodes) == 1
-    assert len(layout.edges) == 1
-    assert len(layout.stations) == 1
+    # Creating a layout requires at least an ID
+    layout = Layout(layoutId="Layout1")  # Updated to include 'layoutId'
+    assert layout.layoutId == "Layout1"

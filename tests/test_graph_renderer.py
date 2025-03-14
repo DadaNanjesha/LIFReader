@@ -1,12 +1,15 @@
-import networkx as nx
+import pytest
 from lif_reader.graph.graph_renderer import GraphRenderer
+from lif_reader.graph.lif_graph import LIFGraph
+from lif_reader.utils.config_loader import ConfigLoader
 
 def test_graph_renderer():
-    graph = nx.Graph()
-    graph.add_node("N1", pos=(0.0, 0.0))
-    graph.add_node("N2", pos=(1.0, 1.0))
-    graph.add_edge("N1", "N2")
-
-    renderer = GraphRenderer(graph)
-    # This test just ensures the renderer runs without errors
-    renderer.render()
+    lif_graph = LIFGraph()
+    config_loader = ConfigLoader()  # Create a ConfigLoader instance
+    renderer = GraphRenderer(lif_graph, config_loader)  # Pass config_loader instance
+    # This is a basic test. Add more assertions to validate the visualization.
+    try:
+        renderer.visualize_graph()
+        assert True  # If visualization runs without error, consider the test passed
+    except Exception as e:
+        assert False, f"Visualization failed: {e}"
