@@ -1,0 +1,26 @@
+{
+    "file_paths": {
+        "lif_file": "files/example2.json",
+        "output_graph": "output/graph.png"
+    },
+    "graph_settings": {
+        "node_size": 1500,
+        "node_color": "lightblue",
+        "with_labels": true,
+        "edge_color": "gray",
+        "edge_width": 1.0,
+        "edge_alpha": 0.7,
+        "edge_style": "solid",
+        "edge_connectionstyle": "arc3"
+    },
+    "logging": {
+        "log_level": "INFO",
+        "log_file": "logs/lif_reader.log"
+    },
+    "command_line_args": {
+        "lif": true,
+        "visualize": true,
+        "vda5050": false,
+        "vda5050_server": "ws://localhost:8080"
+    }
+}

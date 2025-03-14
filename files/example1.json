@@ -1,0 +1,156 @@
+{
+    "metaInformation": {
+        "projectIdentification": "LIF",
+        "creator": "Dada Nanjesha",
+        "exportTimestamp": "",
+        "lifVersion": "1.0.0"
+    },
+    "layouts": [
+        {
+            "layoutId": "Layout1",
+            "layoutName": "Upper Floor",
+            "layoutVersion": "1.0",
+            "layoutLevelId": "Level2",
+            "layoutDescription": "Upper floor layout for testing",
+            "nodes": [
+                {
+                    "nodeId": "N1",
+                    "nodeName": "Node 1",
+                    "nodeDescription": "Starting point",
+                    "mapId": "Map2",
+                    "nodePosition": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "vehicleTypeId": "VehicleType1",
+                            "theta": 0.0,
+                            "actions": [ ]
+                        }
+                    ]
+                },
+                {
+                    "nodeId": "N2",
+                    "nodeName": "Node 2",
+                    "nodeDescription": "Intermediate point",
+                    "mapId": "Map2",
+                    "nodePosition": {
+                        "x": 5.0,
+                        "y": 0.0
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "vehicleTypeId": "VehicleType1",
+                            "theta": 0.0,
+                            "actions": [ ]
+                        }
+                    ]
+                },
+                {
+                    "nodeId": "N3",
+                    "nodeName": "Node 3",
+                    "nodeDescription": "Ending point",
+                    "mapId": "Map2",
+                    "nodePosition": {
+                        "x": 10.0,
+                        "y": 0.0
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "vehicleTypeId": "VehicleType1",
+                            "theta": 0.0,
+                            "actions": [ ]
+                        }
+                    ]
+                }
+            ],
+            "edges": [
+                {
+                    "edgeId": "E1",
+                    "edgeName": "Edge 1",
+                    "edgeDescription": "Path from Node 1 to Node 2",
+                    "startNodeId": "N1",
+                    "endNodeId": "N2",
+                    "vehicleTypeEdgeProperties": [
+                        {
+                            "vehicleTypeId": "VehicleType1",
+                            "vehicleOrientation": 0.0,
+                            "orientationType": "TANGENTIAL",
+                            "rotationAllowed": false,
+                            "rotationAtStartNodeAllowed": "NONE",
+                            "rotationAtEndNodeAllowed": "NONE",
+                            "maxSpeed": 1.0,
+                            "maxRotationSpeed": 0.5,
+                            "minHeight": 0.0,
+                            "maxHeight": 2.0,
+                            "loadRestriction": {
+                                "unloaded": true,
+                                "loaded": false,
+                                "loadSetNames": [ ]
+                            },
+                            "actions": [ ],
+                            "trajectory": null,
+                            "reentryAllowed": true
+                        }
+                    ]
+                },
+                {
+                    "edgeId": "E2",
+                    "edgeName": "Edge 2",
+                    "edgeDescription": "Path from Node 2 to Node 3",
+                    "startNodeId": "N2",
+                    "endNodeId": "N3",
+                    "vehicleTypeEdgeProperties": [
+                        {
+                            "vehicleTypeId": "VehicleType1",
+                            "vehicleOrientation": 0.0,
+                            "orientationType": "TANGENTIAL",
+                            "rotationAllowed": false,
+                            "rotationAtStartNodeAllowed": "NONE",
+                            "rotationAtEndNodeAllowed": "NONE",
+                            "maxSpeed": 1.0,
+                            "maxRotationSpeed": 0.5,
+                            "minHeight": 0.0,
+                            "maxHeight": 2.0,
+                            "loadRestriction": {
+                                "unloaded": true,
+                                "loaded": false,
+                                "loadSetNames": [ ]
+                            },
+                            "actions": [ ],
+                            "trajectory": null,
+                            "reentryAllowed": true
+                        }
+                    ]
+                }
+            ],
+            "stations": [
+                {
+                    "stationId": "S1",
+                    "interactionNodeIds": [ "N1" ],
+                    "stationName": "Station 1",
+                    "stationDescription": "Pickup station",
+                    "stationHeight": 1.0,
+                    "stationPosition": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "theta": 0.0
+                    }
+                },
+                {
+                    "stationId": "S2",
+                    "interactionNodeIds": [ "N3" ],
+                    "stationName": "Station 2",
+                    "stationDescription": "Drop-off station",
+                    "stationHeight": 1.0,
+                    "stationPosition": {
+                        "x": 10.0,
+                        "y": 0.0,
+                        "theta": 0.0
+                    }
+                }
+            ]
+        }
+    ]
+}

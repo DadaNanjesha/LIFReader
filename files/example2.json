@@ -1,0 +1,619 @@
+{
+    "metaInformation": {
+        "projectIdentification": "LIF",
+        "creator": "Dada Nanjesha",
+        "exportTimestamp": "",
+        "lifVersion": "1.0.0"
+    },
+    "layouts": [
+        {
+            "layoutId": "entry",
+            "layoutName": "Entry",
+            "layoutVersion": "1.0.0",
+            "layoutLevelId": "1",
+            "layoutDescription": "",
+            "nodes": [
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "351880",
+                    "nodeName": "351880",
+                    "nodePosition": {
+                        "x": -2.017,
+                        "y": 1.013
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [{
+                                "actionType": "parking",
+                                "actionDescription": "parking",
+                                "required": "True",
+                                "blockingType": "HARD",
+                                "actionParameters": [
+                                    {
+                                        "key": "parking",
+                                        "value": "parking"
+                                    }
+                                ]
+                            } ,{
+                                "actionType": "drop",
+                                "actionDescription": "drop",
+                                "required": "True",
+                                "blockingType": "HARD",
+                                "actionParameters": [
+                                    {
+                                        "key": "drop",
+                                        "value": "drop"
+                                    }
+                                ]
+                            }],
+                            "theta": 0,
+                            "vehicleTypeId": "1"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "353097",
+                    "nodeName": "353097",
+                    "nodePosition": {
+                        "x": -2.017,
+                        "y": 0.008
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "1"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "354345",
+                    "nodeName": "354345",
+                    "nodePosition": {
+                        "x": -2.002,
+                        "y": -0.992
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "1"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "359125",
+                    "nodeName": "359125",
+                    "nodePosition": {
+                        "x": -2.02,
+                        "y": 1.995
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "1"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "360997",
+                    "nodeName": "360997",
+                    "nodePosition": {
+                        "x": -1,
+                        "y": 2.005
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "2"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "362997",
+                    "nodeName": "362997",
+                    "nodePosition": {
+                        "x": -1.01,
+                        "y": 1.02
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "2"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "363963",
+                    "nodeName": "363963",
+                    "nodePosition": {
+                        "x": -0.99,
+                        "y": 0
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "2"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "365325",
+                    "nodeName": "365325",
+                    "nodePosition": {
+                        "x": -1.01,
+                        "y": -0.99
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "2"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "367285",
+                    "nodeName": "367285",
+                    "nodePosition": {
+                        "x": -0.005,
+                        "y": -0.99
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "3"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "369399",
+                    "nodeName": "369399",
+                    "nodePosition": {
+                        "x": -0.015,
+                        "y": 0
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "3"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "385807",
+                    "nodeName": "385807",
+                    "nodePosition": {
+                        "x": -0.01,
+                        "y": 1.01
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "3"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "388133",
+                    "nodeName": "388133",
+                    "nodePosition": {
+                        "x": -0.005,
+                        "y": 2.016
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "3"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "StationNode",
+                    "nodeId": "391521",
+                    "nodeName": "391521",
+                    "nodePosition": {
+                        "x": 0.995,
+                        "y": 2
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "4"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "StationNode",
+                    "nodeId": "393723",
+                    "nodeName": "393723",
+                    "nodePosition": {
+                        "x": 0.985,
+                        "y": 1
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [],
+                            "theta": 0,
+                            "vehicleTypeId": "4"
+                        }
+                    ]
+                },
+                {
+                    "mapId": "",
+                    "nodeDescription": "",
+                    "nodeId": "395261",
+                    "nodeName": "395261",
+                    "nodePosition": {
+                        "x": 0.985,
+                        "y": -0.995
+                    },
+                    "vehicleTypeNodeProperties": [
+                        {
+                            "actions": [ ],
+                            "theta": 0,
+                            "vehicleTypeId": "4"
+                        }
+                    ]
+                }
+            ],
+            "edges": [
+                {
+                    "edgeId": "359125_360997",
+                    "edgeName": "359125_360997",
+                    "startNodeId": "359125",
+                    "endNodeId": "360997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "391521_393723",
+                    "edgeName": "391521_393723",
+                    "startNodeId": "391521",
+                    "endNodeId": "393723",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "393723_395261",
+                    "edgeName": "393723_395261",
+                    "startNodeId": "393723",
+                    "endNodeId": "395261",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "393723_369399",
+                    "edgeName": "393723_369399",
+                    "startNodeId": "393723",
+                    "endNodeId": "369399",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "388133_391521",
+                    "edgeName": "388133_391521",
+                    "startNodeId": "388133",
+                    "endNodeId": "391521",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "388133_360997",
+                    "edgeName": "388133_360997",
+                    "startNodeId": "388133",
+                    "endNodeId": "360997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "354345_359125",
+                    "edgeName": "354345_359125",
+                    "startNodeId": "351880",
+                    "endNodeId": "359125",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "354345_365325",
+                    "edgeName": "354345_365325",
+                    "startNodeId": "354345",
+                    "endNodeId": "365325",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "354345_363963",
+                    "edgeName": "354345_363963",
+                    "startNodeId": "354345",
+                    "endNodeId": "363963",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "385807_388133",
+                    "edgeName": "385807_388133",
+                    "startNodeId": "385807",
+                    "endNodeId": "388133",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "385807_362997",
+                    "edgeName": "385807_362997",
+                    "startNodeId": "385807",
+                    "endNodeId": "362997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "385807_391521",
+                    "edgeName": "385807_391521",
+                    "startNodeId": "385807",
+                    "endNodeId": "391521",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "395261_367285",
+                    "edgeName": "395261_367285",
+                    "startNodeId": "395261",
+                    "endNodeId": "367285",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "395261_369399",
+                    "edgeName": "395261_369399",
+                    "startNodeId": "395261",
+                    "endNodeId": "369399",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "369399_385807",
+                    "edgeName": "369399_385807",
+                    "startNodeId": "369399",
+                    "endNodeId": "385807",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "369399_363963",
+                    "edgeName": "369399_363963",
+                    "startNodeId": "369399",
+                    "endNodeId": "363963",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "369399_362997",
+                    "edgeName": "369399_362997",
+                    "startNodeId": "369399",
+                    "endNodeId": "362997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "362997_363963",
+                    "edgeName": "362997_363963",
+                    "startNodeId": "362997",
+                    "endNodeId": "363963",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "362997_359125",
+                    "edgeName": "362997_359125",
+                    "startNodeId": "362997",
+                    "endNodeId": "359125",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "362997_388133",
+                    "edgeName": "362997_388133",
+                    "startNodeId": "362997",
+                    "endNodeId": "388133",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "365325_367285",
+                    "edgeName": "365325_367285",
+                    "startNodeId": "365325",
+                    "endNodeId": "367285",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "365325_369399",
+                    "edgeName": "365325_369399",
+                    "startNodeId": "365325",
+                    "endNodeId": "369399",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "367285_369399",
+                    "edgeName": "367285_369399",
+                    "startNodeId": "367285",
+                    "endNodeId": "369399",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "367285_363963",
+                    "edgeName": "367285_363963",
+                    "startNodeId": "367285",
+                    "endNodeId": "363963",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "363963_365325",
+                    "edgeName": "363963_365325",
+                    "startNodeId": "363963",
+                    "endNodeId": "365325",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "363963_385807",
+                    "edgeName": "363963_385807",
+                    "startNodeId": "363963",
+                    "endNodeId": "385807",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "363963_351880",
+                    "edgeName": "363963_351880",
+                    "startNodeId": "363963",
+                    "endNodeId": "351880",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "351880_353097",
+                    "edgeName": "351880_353097",
+                    "startNodeId": "351880",
+                    "endNodeId": "353097",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "351880_362997",
+                    "edgeName": "351880_362997",
+                    "startNodeId": "351880",
+                    "endNodeId": "362997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "351880_360997",
+                    "edgeName": "351880_360997",
+                    "startNodeId": "351880",
+                    "endNodeId": "360997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "360997_362997",
+                    "edgeName": "360997_362997",
+                    "startNodeId": "360997",
+                    "endNodeId": "362997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "360997_385807",
+                    "edgeName": "360997_385807",
+                    "startNodeId": "360997",
+                    "endNodeId": "385807",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "353097_354345",
+                    "edgeName": "353097_354345",
+                    "startNodeId": "353097",
+                    "endNodeId": "354345",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "353097_363963",
+                    "edgeName": "353097_363963",
+                    "startNodeId": "353097",
+                    "endNodeId": "363963",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "353097_362997",
+                    "edgeName": "353097_362997",
+                    "startNodeId": "353097",
+                    "endNodeId": "362997",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                },
+                {
+                    "edgeId": "353097_365325",
+                    "edgeName": "353097_365325",
+                    "startNodeId": "353097",
+                    "endNodeId": "365325",
+                    "edgeDescription": "",
+                    "vehicleTypeEdgeProperties": [ ]
+                }
+            ],
+            "stations": [
+                {
+                    "stationId": "391521",
+                    "stationName": "station1",
+                    "interactionNodeIds": [
+                        "385807",
+                        "393723",
+                        "388133"
+                    ],
+                    "stationDescription": "",
+                    "stationHeight": 0,
+                    "stationPosition": {
+                        "x": 0.995,
+                        "y": 2,
+                        "theta": 0
+                    }
+                },
+                {
+                    "stationId": "393723",
+                    "stationName": "station2",
+                    "interactionNodeIds": [
+                        "369399",
+                        "395261"
+                    ],
+                    "stationDescription": "",
+                    "stationHeight": 0,
+                    "stationPosition": {
+                        "x": 0.985,
+                        "y": 1,
+                        "theta": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

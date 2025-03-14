@@ -1,0 +1,123 @@
+{
+	"metaInformation": {
+		"projectIdentification": "string",
+		"creator": "string",
+		"exportTimestamp": "string",
+		"lifVersion": "string"
+	},
+	"layouts": [
+		{
+			"layoutId": "string",
+			"layoutName": "string",
+			"layoutVersion": "string",
+			"layoutLevelId": "string",
+			"layoutDescription": "string",
+			"nodes": [
+				{
+					"nodeId": "string",
+					"nodeName": "string",
+					"nodeDescription": "string",
+					"mapId": "string",
+					"nodePosition": {
+						"x": "number",
+						"y": "number"
+					},
+					"vehicleTypeNodeProperties": [
+						{
+							"vehicleTypeId": "string",
+							"theta": "number",
+							"actions": [
+								{
+									"actionType": "string",
+									"actionDescription": "string",
+									"required": "boolean",
+									"blockingType": "string",
+									"actionParameters": [
+										{
+											"key": "string",
+											"value": "string"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"edges": [
+				{
+					"edgeId": "string",
+					"edgeName": "string",
+					"edgeDescription": "string",
+					"startNodeId": "string",
+					"endNodeId": "string",
+					"vehicleTypeEdgeProperties": [
+						{
+							"vehicleTypeId": "string",
+							"vehicleOrientation": "number",
+							"orientationType": "string",
+							"rotationAllowed": "boolean",
+							"rotationAtStartNodeAllowed": "string",
+							"rotationAtEndNodeAllowed": "string",
+							"maxSpeed": "number",
+							"maxRotationSpeed": "number",
+							"minHeight": "number",
+							"maxHeight": "number",
+							"loadRestriction": {
+								"unloaded": "boolean",
+								"loaded": "boolean",
+								"loadSetNames": [
+									"string"
+								]
+							},
+							"actions": [
+								{
+									"actionType": "string",
+									"actionDescription": "string",
+									"requirementType": "string",
+									"blockingType": "string",
+									"actionParameters": [
+										{
+											"key": "string",
+											"value": "string"
+										}
+									]
+								}
+							],
+							"trajectory": {
+								"degree": "number",
+								"knotVector": [
+									"number"
+								],
+								"controlPoints": [
+									{
+										"x": "number",
+										"y": "number",
+										"weight": "number"
+									}
+								]
+							},
+							"reentryAllowed": "boolean"
+						}
+					]
+				}
+			],
+			"stations": [
+				{
+					"stationId": "string",
+					"interactionNodeIds": [
+						"string"
+					],
+					"stationName": "string",
+					"stationDescription": "string",
+					"stationHeight": "number",
+					"stationPosition ": {
+						"x": "number",
+						"y": "number",
+						"theta": "number"
+					}
+				}
+			]
+		}
+	]
+}
