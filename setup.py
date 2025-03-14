@@ -1,12 +1,12 @@
-import setuptools
-from os import path, find_packages
+from setuptools import setup, find_packages
+from os import path
 
 # Get the long description from README.md
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, "README.md"), encoding="utf-8") as fh:
     long_description = fh.read()
 
-setuptools.setup(
+setup(
     name="LIFReader",
     version="1.0.0",
     author="Dada Nanjesha",
@@ -28,7 +28,7 @@ setuptools.setup(
     ],
     entry_points={
         "console_scripts": [
-            "lifreader=main:main",  # If you want a command-line entry point
+            "lifreader=main:main",
         ],
     },
 )
