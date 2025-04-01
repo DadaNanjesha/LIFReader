@@ -16,7 +16,7 @@ Inspired by the VDA 5050 standard, LIFReader provides a streamlined way to under
 
 *   **Effortless LIF Parsing**: Seamlessly converts LIF files into a structured graph representation.
 *   **Stunning Visualizations**: Transforms AGV layouts into easily understandable visual maps using Matplotlib.
-*   **Fully Configurable**: Customize visualization settings (colors, node sizes, labels) via a simple `config.json` file.
+*   **Fully Configurable**: Customize visualization settings (colors, nodes sizes, labels) via a simple `config.json` file.
 *   **Logging Support**: Track script activity with comprehensive logging for debugging and analysis.
 *   **Lightweight and Modular**: Easy to integrate into existing projects and workflows.
 
